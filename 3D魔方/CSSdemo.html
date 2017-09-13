@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSSdemo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/CSSdemo.css">
+    <style>
+    .layout {
+        display: none;
+        margin-top: 10px;
+    }
+
+    .flex {
+        margin: 20px auto;
+        display: none;
+        width: 650px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" class="active"><a href="#">CSS 3D魔方</a></li>
+                <li role="presentation"><a href="#">双飞翼布局</a></li>
+                <li role="presentation"><a href="#">Flex布局</a></li>
+            </ul>
+        </nav>
+
+        <!-- 3D魔方 -->
+        <div id="box3D">
+            <div class="A">
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+                <div class="red"></div>
+            </div>
+            <div class="B">
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+                <div class="green"></div>
+            </div>
+            <div class="C">
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+            <div class="D">
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+                <div class="orange"></div>
+            </div>
+            <div class="E">
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+                <div class="yellow"></div>
+            </div>
+            <div class="F">
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+                <div class="white"></div>
+            </div>
+        </div>
+
+        <!-- 双飞翼布局 -->
+        <div class="layout">
+            <header>
+                这是头部
+            </header>
+            <article class="outer">
+                <section>
+                    <div class="main">
+                        <div class="inner">main</div>
+                    </div>
+                </section>
+                <aside>
+                    <div class="left">left</div>
+                </aside>
+                <aside>
+                    <div class="right">right</div>
+                </aside>
+            </article>
+            <footer>这是底部</footer>
+        </div>
+
+        <!-- flex布局 -->
+        <div class="flex">
+            <div class="con">
+                <div class="first">第一个</div>
+                <div class="second">第二个</div>
+                <div class="third">第三个</div>
+            </div>
+            <hr/>
+            <div class="con1">
+                <div class="first1">第一个</div>
+                <div class="second1">第二个</div>
+                <div class="third1">第三个</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".nav").find("li").click(function() {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        });
+        $(".nav li:nth-child(1)").click(function() {
+            $("#box3D").css("display", "block");
+            $("#box3D").siblings().has("div").css('display', 'none');
+        });
+        $(".nav li:nth-child(2)").click(function() {
+            $(".layout").css("display", "block");
+            $(".layout").siblings().has("div").css('display', 'none');
+        });
+        $(".nav li:nth-child(3)").click(function() {
+            $(".flex").css("display", "block");
+            $('.flex').siblings().has("div").css('display', 'none');
+        })
+    })
+    </script>
+</body>
+
+</html>
